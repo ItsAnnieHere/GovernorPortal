@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 using GovernorPortal.UI.Security;
+using RequireHttpsAttribute = GovernorPortal.UI.Security.RequireHttpsAttribute;
 
 namespace GovernorPortal.UI
 {
