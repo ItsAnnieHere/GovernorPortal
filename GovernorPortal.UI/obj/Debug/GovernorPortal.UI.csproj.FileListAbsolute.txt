@@ -1,0 +1,7 @@
+C:\Annie\Code\GovernorPortal.UI\GovernorPortal.UI\bin\GovernorPortal.UI.dll
+C:\Annie\Code\GovernorPortal.UI\GovernorPortal.UI\bin\GovernorPortal.UI.pdb
+C:\Annie\Code\GovernorPortal.UI\GovernorPortal.UI\bin\EntityFramework.dll
+C:\Annie\Code\GovernorPortal.UI\GovernorPortal.UI\bin\EntityFramework.xml
+C:\Annie\Code\GovernorPortal.UI\GovernorPortal.UI\obj\Debug\ResolveAssemblyReference.cache
+C:\Annie\Code\GovernorPortal.UI\GovernorPortal.UI\obj\Debug\GovernorPortal.UI.dll
+C:\Annie\Code\GovernorPortal.UI\GovernorPortal.UI\obj\Debug\GovernorPortal.UI.pdb
