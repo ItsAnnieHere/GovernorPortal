@@ -22,7 +22,7 @@ namespace GovernorPortal.UI.Tests.Controllers
             ViewResult result = controller.Index() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Welcome to ASP.NET MVC!", result.ViewBag.Message);
+            Assert.AreEqual("Pebble Brook School Governor Portal", result.ViewBag.Message);
         }
     }
 }

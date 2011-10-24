@@ -10,7 +10,7 @@ namespace GovernorPortal.UI.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Pebble Brook School Governors Portal";
+            ViewBag.Message = "Pebble Brook School Governor Portal";
 
             return View();
         }
