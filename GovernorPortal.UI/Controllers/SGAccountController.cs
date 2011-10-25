@@ -44,11 +44,16 @@ namespace GovernorPortal.UI.Controllers
         [AllowAnonymous]
         public virtual ActionResult LogOn()
         {
+            // AA - TODO - remove
+            authenticationService.LogOn("annie", "Y0gme1ster", false);
+            return RedirectToAction("Index", "Home");
+
+            /*
             var viewModel = new LogOnViewModel()
             {
                 EnablePasswordReset = membershipService.EnablePasswordReset
             };
-            return View(viewModel);
+            return View(viewModel); */
         }
 
         [HttpPost]

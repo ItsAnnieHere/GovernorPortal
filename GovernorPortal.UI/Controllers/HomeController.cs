@@ -12,6 +12,7 @@ namespace GovernorPortal.UI.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = ConfigurationManager.AppSettings["WebsiteTitle"];
+            ViewBag.ShowAllMeetings = false;
             try
             {
                 // TODO - Mock this for tests
