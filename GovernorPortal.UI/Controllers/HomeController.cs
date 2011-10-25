@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Configuration;
 
 namespace GovernorPortal.UI.Controllers
 {
@@ -10,7 +11,7 @@ namespace GovernorPortal.UI.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Pebble Brook School Governor Portal";
+            ViewBag.Message = ConfigurationManager.AppSettings["WebsiteTitle"];
             try
             {
                 // TODO - Mock this for tests

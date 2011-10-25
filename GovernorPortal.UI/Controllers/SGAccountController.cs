@@ -8,6 +8,7 @@ using SecurityGuard.Interfaces;
 using SecurityGuard.Services;
 using SecurityGuard.ViewModels;
 using GovernorPortal.UI.Security;
+using ConfigSettings = SecurityGuard.Core.ConfigSettings;
 
 namespace GovernorPortal.UI.Controllers
 {

@@ -139,7 +139,7 @@ namespace GovernorPortal.UI.Areas.SecurityGuard.Controllers
 
         #endregion
 
-        #region View User Details Methods
+        #region Update User Details Methods
 
         [HttpGet]
         public ActionResult Update(string userName)
@@ -155,7 +155,6 @@ namespace GovernorPortal.UI.Areas.SecurityGuard.Controllers
         }
 
         [HttpPost]
-        //[ActionName("Update")]
         [MultiButtonFormSubmit(ActionName = "UpdateDeleteCancel", SubmitButton = "UpdateUser")]
         public ActionResult UpdateUser(string UserName)
         {
@@ -223,6 +222,12 @@ namespace GovernorPortal.UI.Areas.SecurityGuard.Controllers
                 membershipService.UpdateUser(user);
 
                 string approvedMsg = (user.IsApproved) ? "Approved" : "Denied";
+
+                if (user.IsApproved)
+                {
+                    // Send a confirmation email to tell the user they're approved
+
+                }
 
                 response.Success = true;
                 response.Message = "User " + approvedMsg + " successfully!";
