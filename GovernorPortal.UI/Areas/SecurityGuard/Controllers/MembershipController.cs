@@ -145,7 +145,7 @@ namespace GovernorPortal.UI.Areas.SecurityGuard.Controllers
         public ActionResult Update(string userName)
         {
             MembershipUser user = membershipService.GetUser(userName);
-
+            
             UserViewModel viewModel = new UserViewModel();
             viewModel.User = user;
             viewModel.RequiresSecretQuestionAndAnswer = membershipService.RequiresQuestionAndAnswer;

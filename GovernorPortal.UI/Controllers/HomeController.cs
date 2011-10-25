@@ -11,6 +11,7 @@ namespace GovernorPortal.UI.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Pebble Brook School Governor Portal";
+            ViewBag.HomePhone = HttpContext.Profile.GetPropertyValue("HomePhone");
 
             return View();
         }
