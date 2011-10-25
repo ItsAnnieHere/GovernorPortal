@@ -11,7 +11,17 @@ namespace GovernorPortal.UI.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Pebble Brook School Governor Portal";
-            ViewBag.HomePhone = HttpContext.Profile.GetPropertyValue("HomePhone");
+            try
+            {
+                // TODO - Mock this in tests
+                if (HttpContext != null && HttpContext.Profile != null)
+                {
+                    ViewBag.HomePhone = HttpContext.Profile.GetPropertyValue("HomePhone");
+                }
+            }
+            catch (PropertyNotFoundException)
+            {
+            }
 
             return View();
         }
