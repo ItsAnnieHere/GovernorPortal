@@ -8,8 +8,6 @@ namespace GovernorPortal.UI.Controllers
 {
     public partial class BaseController : Controller
     {
-
-
         /// <summary>
         /// This provides simple feedback to the modelstate in the case of errors.
         /// </summary>

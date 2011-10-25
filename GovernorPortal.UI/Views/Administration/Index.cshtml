@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Administration";
+}
+
+<h2>Administration</h2>
+
+<ul>
+@{ if (User.IsInRole("SecurityGuard") )
+   {
+        <li>@Html.ActionLink("Security Guard", "Index", "Dashboard", new { area = "SecurityGuard" }, null)</li>
+   } 
+}
+</ul>

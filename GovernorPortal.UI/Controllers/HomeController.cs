@@ -9,21 +9,11 @@ namespace GovernorPortal.UI.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public ActionResult Index()
         {
             ViewBag.Message = ConfigurationManager.AppSettings["WebsiteTitle"];
             ViewBag.ShowAllMeetings = false;
-            try
-            {
-                // TODO - Mock this for tests
-                if (HttpContext != null && HttpContext.Profile != null)
-                {
-                    ViewBag.HomePhone = HttpContext.Profile.GetPropertyValue("HomePhone");
-                }
-            }
-            catch (PropertyNotFoundException)
-            {
-            }
 
             return View();
         }

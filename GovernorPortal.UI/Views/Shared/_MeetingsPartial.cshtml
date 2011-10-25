@@ -1,8 +1,34 @@
-﻿<h3>Upcoming Meetings:</h3>
-@if (ViewBag.ShowAllMeetings == null || ViewBag.ShowAllMeetings)
-{
-    <text>Show all meetings</text>
-}
-else {
-    <text>Show next term's meetings</text>
-}
+﻿@using System.Collections.ObjectModel
+@using GovernorPortal.UI.Models;
+@using GovernorPortal.UI;
+
+@{ 
+    Collection<MeetingModel> meetings;
+    if (ViewBag.ShowAllMeetings == null || ViewBag.ShowAllMeetings) {
+    <h3>All meetings:</h3>
+        meetings = TempToRemove.GetMeetings();
+    } else {
+    <h3>Upcoming meetings:</h3>
+        meetings = TempToRemove.GetMeetings();
+    }
+
+    TermModel currentTerm = TermModel.GetTerm(DateTime.Now);
+    var ms = meetings.Where(m => m.Term.Year == currentTerm.Year).OrderBy(m => m.DateTime);
+    }
+
+    <table>
+    @foreach (MeetingModel m in ms) {
+            <tr>
+                <td>@m.Title:</td>
+                <td>@m.DateTime.Date.ToLongDateString()</td>
+             @if (User.IsInRole("Administrator") && (ViewBag.ShowMeetingEdit != null && ViewBag.ShowMeetingEdit))
+             {
+                <td>@Html.ActionLink("Edit", "Edit", "Meeting", new { MeetingId = m.MeetingId }, null)</td>
+             }
+            </tr>
+         }
+             @if (User.IsInRole("Administrator") && (ViewBag.ShowMeetingEdit != null && ViewBag.ShowMeetingEdit))
+             {
+                <tr><td colspan="3">@Html.ActionLink("Add a new meeting", "Add", "Meeting")</td></tr>
+             }
+    </table>

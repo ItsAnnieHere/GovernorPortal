@@ -19,13 +19,14 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Meetings", "Index", "Meeting")</li>
                         <li>@Html.ActionLink("Profile", "Index", "Profile")</li>
                         <li>@Html.ActionLink("Change Password", "ChangePassword", "SGAccount")</li>
 
-                        if (User.IsInRole("SecurityGuard"))
+                        if (User.IsInRole("Administrator"))
                         {
-                            <li>@Html.ActionLink("Security Guard", "Index", "Dashboard", new { area = "SecurityGuard" }, null)</li>
-                        } 
+                            <li>@Html.ActionLink("Administration", "Index", "Administration")</li>
+                        }
                     }               
                 </ul>
             </div>

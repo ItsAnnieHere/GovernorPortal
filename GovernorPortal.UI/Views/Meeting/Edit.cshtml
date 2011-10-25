@@ -1,0 +1,14 @@
+﻿@model GovernorPortal.UI.Models.MeetingModel
+@using GovernorPortal.UI.Models;
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<table>
+<tr><td>Title:</td><td>@Html.TextBoxFor(Model => Model.Title)</td></tr>
+<tr><td>Date:</td><td>@Html.TextBoxFor(Model => Model.DateTime)</td></tr>
+<tr><td>Committee:</td><td>@Html.TextBoxFor(Model => Model.Committee.Name)</td></tr>
+</table>
