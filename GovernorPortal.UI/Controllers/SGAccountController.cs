@@ -122,16 +122,25 @@ namespace GovernorPortal.UI.Controllers
         [AllowAnonymous]
         public virtual ActionResult Register(RegisterViewModel model)
         {
+            bool acceptWithoutApproval = false;
+
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, model.SecretQuestion, model.SecretAnswer, true, out createStatus);
+                Membership.CreateUser(model.UserName, model.Password, model.Email, model.SecretQuestion, model.SecretAnswer, acceptWithoutApproval, out createStatus);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
-                    FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
-                    return RedirectToAction("Index", "Home");
+                    if (acceptWithoutApproval)
+                    {
+                        FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Confirmation", "SGAccount", model);
+                    }
                 }
                 else
                 {
@@ -142,6 +151,12 @@ namespace GovernorPortal.UI.Controllers
             return RedirectToAction("Register");
         }
 
+        [AllowAnonymous]
+        public virtual ActionResult Confirmation(RegisterViewModel model)
+        {
+            ViewBag.Email = model.Email;
+            return View();
+        }
 
         #endregion
 

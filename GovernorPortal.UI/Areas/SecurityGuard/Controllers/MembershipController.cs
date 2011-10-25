@@ -253,8 +253,6 @@ namespace GovernorPortal.UI.Areas.SecurityGuard.Controllers
 
         #endregion
 
-
-
         #region Grant Users with Roles Methods
 
         /// <summary>

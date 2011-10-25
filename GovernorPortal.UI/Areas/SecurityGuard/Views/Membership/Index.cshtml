@@ -14,22 +14,21 @@
     | @Html.ActionLink("Grant Roles to User", "GrantRolesToUser", "Membership", new { area = "SecurityGuard" }, new { id = "grant-roles-to-user", disabled = "disabled" })</p>
 @using (Html.BeginForm())
 {
-    <select id="filterby" name="filterby">
+    <p><select id="filterby" name="filterby">
         <option value="all" @if(Model.FilterBy == "all"){ <text>selected="selected"</text>}>View All</option>
         <option value="username" @if (Model.FilterBy == "username"){ <text>selected="selected"</text>}>UserName</option>
         <option value="email" @if (Model.FilterBy == "email"){ <text>selected="selected"</text>}>Email</option>
     </select>
     <text>&nbsp;Starts with:</text> @Html.TextBox("searchterm", Model.SearchTerm, null) 
 
-    <input type="submit" id="filter-button" value="Search" />
+    <input type="submit" id="filter-button" value="Search" /></p>
 }
 <br />
 @if (Model.PaginatedUserList != null)
 {
     if (Model.PaginatedUserList.TotalCount == 0)
     {
-    <p>
-        No users for this search.</p>
+    <p>No users for this search.</p>
     }
     else
     {

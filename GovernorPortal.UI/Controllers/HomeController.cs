@@ -13,7 +13,7 @@ namespace GovernorPortal.UI.Controllers
             ViewBag.Message = "Pebble Brook School Governor Portal";
             try
             {
-                // TODO - Mock this in tests
+                // TODO - Mock this for tests
                 if (HttpContext != null && HttpContext.Profile != null)
                 {
                     ViewBag.HomePhone = HttpContext.Profile.GetPropertyValue("HomePhone");
